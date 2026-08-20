@@ -6,7 +6,7 @@ stay mergeable with upstream, keep the local diff small and deliberate.
 ## Remotes and branches
 
 - `upstream` — https://github.com/cjpais/Handy.git (read-only reference)
-- `origin` — https://github.com/gustmrg/handy (private fork repository)
+- `origin` — https://github.com/gustmrg/handy (public fork repository)
 - `main` — pristine mirror of upstream. Never commit fork changes here;
   it exists so `git merge upstream/main` stays a clean fast-forward.
 - `dev` — default branch, your fork's work lives here. Feature work happens
@@ -54,14 +54,15 @@ files are the conflicts you should expect.
 
 ## Still to do before a release
 
-- **Updater keys**: `pubkey` in `tauri.conf.json` is intentionally empty
-  (update checks fail closed). Generate your own with
-  `npx @tauri-apps/cli signer generate` and set the pubkey + your repo's
-  release endpoint.
+- **Updater key backup**: Parler's updater public key is configured in
+  `tauri.conf.json`; the protected private key and password are stored in
+  GitHub Actions secrets. Back up both before publishing the first release —
+  losing either prevents updates to existing installations.
 - **Bundle identifier**: `com.gustmrg.parler` is a placeholder — use a domain
   you control.
-- **Code signing**: macOS builds are ad-hoc signed (`signingIdentity: "-"`);
-  Windows signing was upstream's Azure account and has been removed.
+- **Code signing**: the initial release workflow uses macOS ad-hoc signing
+  (`signingIdentity: "-"`) and no Windows certificate. Downloaded installers
+  will show operating-system trust warnings until platform signing is added.
 - **Model CDN**: the model catalog downloads from upstream's
   `blob.handy.computer`. Fine for development, but decide whether to mirror
   models before shipping — you depend on their infrastructure and goodwill.

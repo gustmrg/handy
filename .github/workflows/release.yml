@@ -73,8 +73,11 @@ jobs:
       platform: ${{ matrix.platform }}
       target: ${{ matrix.target }}
       build-args: ${{ matrix.args }}
-      sign-binaries: true
-      asset-prefix: "handy"
+      # Platform code signing is intentionally disabled for the first Parler
+      # release. Updater artifacts remain cryptographically signed with the
+      # separate Tauri updater key configured in repository secrets.
+      sign-binaries: false
+      asset-prefix: "parler"
       upload-artifacts: false
       release-id: ${{ needs.create-release.outputs.release-id }}
       # Releases always build from scratch — never restore the Rust cache, so a
