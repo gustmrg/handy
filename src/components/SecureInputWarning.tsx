@@ -2,7 +2,9 @@ import { useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { listen } from "@tauri-apps/api/event";
 import { openUrl } from "@tauri-apps/plugin-opener";
-import { ExternalLink, TriangleAlert, X } from "lucide-react";
+import { ArrowSquareOutIcon as ExternalLink } from "@phosphor-icons/react/ArrowSquareOut";
+import { WarningIcon as TriangleAlert } from "@phosphor-icons/react/Warning";
+import { XIcon as X } from "@phosphor-icons/react/X";
 import { commands, type SecureInputStatus } from "@/bindings";
 
 // Detailed remediation steps live in the docs rather than in the banner

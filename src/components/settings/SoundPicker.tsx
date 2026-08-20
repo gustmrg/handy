@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "../ui/Button";
 import { Dropdown, DropdownOption } from "../ui/Dropdown";
-import { PlayIcon } from "lucide-react";
+import { PlayIcon } from "@phosphor-icons/react/Play";
 import { SettingContainer } from "../ui/SettingContainer";
 import { useSettingsStore } from "../../stores/settingsStore";
 import { useSettings } from "../../hooks/useSettings";

@@ -1,8 +1,13 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Cog, FlaskConical, History, Info, Sparkles, Cpu } from "lucide-react";
+import { ClockCounterClockwiseIcon as History } from "@phosphor-icons/react/ClockCounterClockwise";
+import { CpuIcon as Cpu } from "@phosphor-icons/react/Cpu";
+import { FlaskIcon as FlaskConical } from "@phosphor-icons/react/Flask";
+import { GearIcon as Cog } from "@phosphor-icons/react/Gear";
+import { InfoIcon as Info } from "@phosphor-icons/react/Info";
+import { MicrophoneIcon } from "@phosphor-icons/react/Microphone";
+import { SparkleIcon as Sparkles } from "@phosphor-icons/react/Sparkle";
 import HandyTextLogo from "./icons/HandyTextLogo";
-import HandyHand from "./icons/HandyHand";
 import { useSettings } from "../hooks/useSettings";
 import {
   GeneralSettings,
@@ -34,7 +39,7 @@ interface SectionConfig {
 export const SECTIONS_CONFIG = {
   general: {
     labelKey: "sidebar.general",
-    icon: HandyHand,
+    icon: MicrophoneIcon,
     component: GeneralSettings,
     enabled: () => true,
   },

@@ -1,15 +1,13 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import {
-  AudioLines,
-  Check,
-  Download,
-  Globe,
-  HardDrive,
-  Languages,
-  Loader2,
-  Trash2,
-} from "lucide-react";
+import { CheckIcon as Check } from "@phosphor-icons/react/Check";
+import { DownloadSimpleIcon as Download } from "@phosphor-icons/react/DownloadSimple";
+import { GlobeIcon as Globe } from "@phosphor-icons/react/Globe";
+import { HardDriveIcon as HardDrive } from "@phosphor-icons/react/HardDrive";
+import { SpinnerGapIcon as Loader2 } from "@phosphor-icons/react/SpinnerGap";
+import { TranslateIcon as Languages } from "@phosphor-icons/react/Translate";
+import { TrashIcon as Trash2 } from "@phosphor-icons/react/Trash";
+import { WaveformIcon as AudioLines } from "@phosphor-icons/react/Waveform";
 import type { ModelInfo } from "@/bindings";
 import { formatModelSize } from "../../lib/utils/format";
 import {

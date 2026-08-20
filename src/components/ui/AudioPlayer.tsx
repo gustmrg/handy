@@ -7,7 +7,8 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { Play, Pause } from "lucide-react";
+import { PauseIcon as Pause } from "@phosphor-icons/react/Pause";
+import { PlayIcon as Play } from "@phosphor-icons/react/Play";
 
 interface AudioPlayerProps {
   /** Audio source URL. If not provided, onLoadRequest must be provided. */
@@ -287,9 +288,9 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
         aria-label={isPlaying ? "Pause" : "Play"}
       >
         {isPlaying ? (
-          <Pause width={20} height={20} fill="currentColor" />
+          <Pause width={20} height={20} weight="fill" />
         ) : (
-          <Play width={20} height={20} fill="currentColor" />
+          <Play width={20} height={20} weight="fill" />
         )}
       </button>
 

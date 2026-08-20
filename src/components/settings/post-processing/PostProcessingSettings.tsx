@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
-import { RefreshCcw } from "lucide-react";
+import { ArrowCounterClockwiseIcon as RefreshCcw } from "@phosphor-icons/react/ArrowCounterClockwise";
 import { commands } from "@/bindings";
 
 import { Alert } from "../../ui/Alert";

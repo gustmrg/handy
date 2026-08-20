@@ -11,7 +11,10 @@ import { toast } from "sonner";
 import { commands } from "@/bindings";
 import { useSettingsStore } from "@/stores/settingsStore";
 import HandyTextLogo from "../icons/HandyTextLogo";
-import { Keyboard, Mic, Check, Loader2 } from "lucide-react";
+import { CheckIcon as Check } from "@phosphor-icons/react/Check";
+import { KeyboardIcon as Keyboard } from "@phosphor-icons/react/Keyboard";
+import { MicrophoneIcon as Mic } from "@phosphor-icons/react/Microphone";
+import { SpinnerGapIcon as Loader2 } from "@phosphor-icons/react/SpinnerGap";
 
 interface AccessibilityOnboardingProps {
   onComplete: () => void;

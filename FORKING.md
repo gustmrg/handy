@@ -6,9 +6,7 @@ stay mergeable with upstream, keep the local diff small and deliberate.
 ## Remotes and branches
 
 - `upstream` — https://github.com/cjpais/Handy.git (read-only reference)
-- `origin` — https://github.com/gustmrg/Echo (**private** — repo rename to
-  match the Parler brand is pending; URLs in `tauri.conf.json` and
-  `llm_client.rs` still point here)
+- `origin` — https://github.com/gustmrg/handy (private fork repository)
 - `main` — pristine mirror of upstream. Never commit fork changes here;
   it exists so `git merge upstream/main` stays a clean fast-forward.
 - `dev` — default branch, your fork's work lives here. Feature work happens
@@ -48,7 +46,7 @@ files are the conflicts you should expect.
 | `index.html`                                    | `<title>` → Parler                                                                                                             |
 | `src/i18n/locales/en/translation.json`          | User-visible app name → Parler                                                                                                 |
 | `src/components/icons/HandyTextLogo.tsx`        | Handy wordmark replaced with placeholder Parler wordmark                                                                       |
-| `src/components/icons/HandyHand.tsx`            | Handy hand logo replaced with placeholder mic glyph                                                                            |
+| `src/components/Sidebar.tsx`                    | Handy hand logo replaced with the Phosphor microphone icon                                                                     |
 | `src/styles/theme.css` + 4 components           | Pink accent replaced with Kimi blue `#1888F8`                                                                                  |
 | `src-tauri/icons/`, `src-tauri/resources/*.png` | Placeholder Parler art via `scripts/generate-placeholder-icons.py` + `npx @tauri-apps/cli icon scripts/parler-icon-source.png` |
 | `README.md`                                     | Parler readme with upstream attribution                                                                                        |
@@ -56,9 +54,6 @@ files are the conflicts you should expect.
 
 ## Still to do before a release
 
-- **Repo rename**: `origin` is still `github.com/gustmrg/Echo`; updater
-  endpoint (`tauri.conf.json`) and `llm_client.rs` headers point there.
-  Rename the repo and update the URLs.
 - **Updater keys**: `pubkey` in `tauri.conf.json` is intentionally empty
   (update checks fail closed). Generate your own with
   `npx @tauri-apps/cli signer generate` and set the pubkey + your repo's

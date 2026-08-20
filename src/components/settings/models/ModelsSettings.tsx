@@ -1,14 +1,12 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { ask } from "@tauri-apps/plugin-dialog";
-import {
-  AudioLines,
-  ChevronDown,
-  Globe,
-  Languages,
-  RefreshCw,
-  Search,
-} from "lucide-react";
+import { ArrowClockwiseIcon as RefreshCw } from "@phosphor-icons/react/ArrowClockwise";
+import { CaretDownIcon as ChevronDown } from "@phosphor-icons/react/CaretDown";
+import { GlobeIcon as Globe } from "@phosphor-icons/react/Globe";
+import { MagnifyingGlassIcon as Search } from "@phosphor-icons/react/MagnifyingGlass";
+import { TranslateIcon as Languages } from "@phosphor-icons/react/Translate";
+import { WaveformIcon as AudioLines } from "@phosphor-icons/react/Waveform";
 import type { ModelCardStatus } from "@/components/onboarding";
 import { ModelCard } from "@/components/onboarding";
 import { useModelStore } from "@/stores/modelStore";

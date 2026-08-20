@@ -23,6 +23,10 @@ import { getLanguageDirection, initializeRTL } from "@/lib/utils/rtl";
 
 type OnboardingStep = "accessibility" | "model" | "done";
 
+const shouldSkipPermissionOnboarding =
+  import.meta.env.DEV &&
+  import.meta.env.VITE_SKIP_PERMISSION_ONBOARDING === "1";
+
 const renderSettingsContent = (section: SidebarSection) => {
   const ActiveComponent =
     SECTIONS_CONFIG[section]?.component || SECTIONS_CONFIG.general.component;
@@ -182,6 +186,12 @@ function App() {
   };
 
   const checkOnboardingStatus = async () => {
+    if (shouldSkipPermissionOnboarding) {
+      setIsReturningUser(true);
+      setOnboardingStep("done");
+      return;
+    }
+
     try {
       const settingsResult = await commands.getAppSettings();
       const hasCompletedOnboarding =

@@ -1,7 +1,12 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { convertFileSrc } from "@tauri-apps/api/core";
 import { readFile } from "@tauri-apps/plugin-fs";
-import { Check, Copy, FolderOpen, RotateCcw, Star, Trash2 } from "lucide-react";
+import { ArrowCounterClockwiseIcon as RotateCcw } from "@phosphor-icons/react/ArrowCounterClockwise";
+import { CheckIcon as Check } from "@phosphor-icons/react/Check";
+import { CopyIcon as Copy } from "@phosphor-icons/react/Copy";
+import { FolderOpenIcon as FolderOpen } from "@phosphor-icons/react/FolderOpen";
+import { StarIcon as Star } from "@phosphor-icons/react/Star";
+import { TrashIcon as Trash2 } from "@phosphor-icons/react/Trash";
 import { useTranslation } from "react-i18next";
 import { toast } from "sonner";
 import {
@@ -384,7 +389,7 @@ const HistoryEntryComponent: React.FC<HistoryEntryProps> = ({
             <Star
               width={16}
               height={16}
-              fill={entry.saved ? "currentColor" : "none"}
+              weight={entry.saved ? "fill" : "regular"}
             />
           </IconButton>
           <IconButton

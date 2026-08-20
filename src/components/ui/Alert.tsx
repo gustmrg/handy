@@ -1,5 +1,8 @@
 import React from "react";
-import { AlertCircle, AlertTriangle, Info, CheckCircle } from "lucide-react";
+import { CheckCircleIcon as CheckCircle } from "@phosphor-icons/react/CheckCircle";
+import { InfoIcon as Info } from "@phosphor-icons/react/Info";
+import { WarningCircleIcon as AlertCircle } from "@phosphor-icons/react/WarningCircle";
+import { WarningIcon as AlertTriangle } from "@phosphor-icons/react/Warning";
 
 type AlertVariant = "error" | "warning" | "info" | "success";
 

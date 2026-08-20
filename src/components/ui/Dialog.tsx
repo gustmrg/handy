@@ -1,6 +1,6 @@
 import React, { useEffect, useId, useRef } from "react";
 import { createPortal } from "react-dom";
-import { X } from "lucide-react";
+import { XIcon as X } from "@phosphor-icons/react/X";
 
 const FOCUSABLE_SELECTOR = [
   "a[href]",
